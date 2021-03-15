@@ -61,7 +61,10 @@ impl<'a, E: CoordinateEncoder> LoadStrategy<'a> for FlatLoad<E> {
         let (loader, storage, sheets) = system_data;
 
         let packed = pack_tileset_vec(
-            &map.tilesets.iter().map(|x| x.unwrap().clone()).collect::<Vec<Tileset>>()[..],
+            &map.tilesets
+                .iter()
+                .map(|x| x.unwrap().clone())
+                .collect::<Vec<Tileset>>()[..],
             source,
         )?;
 
@@ -126,7 +129,10 @@ impl<'a, E: CoordinateEncoder> LoadStrategy<'a> for CompressedLoad<E> {
         }
 
         let packed = pack_sparse_tileset_vec(
-            &map.tilesets.iter().map(|x| x.unwrap().clone()).collect::<Vec<Tileset>>()[..],
+            &map.tilesets
+                .iter()
+                .map(|x| x.unwrap().clone())
+                .collect::<Vec<Tileset>>()[..],
             source,
             &tile_usage[..],
         )?;

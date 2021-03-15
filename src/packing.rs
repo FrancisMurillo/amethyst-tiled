@@ -292,10 +292,7 @@ pub fn pack_sparse_tileset_vec(
 }
 
 /// Pack a list of tile sets while paying attention to the first grid id
-pub fn pack_tileset_vec(
-    sets: &[Tileset],
-    source: Arc<dyn Source>,
-) -> Result<SpriteSheet, Error> {
+pub fn pack_tileset_vec(sets: &[Tileset], source: Arc<dyn Source>) -> Result<SpriteSheet, Error> {
     #[cfg(feature = "profiler")]
     profile_scope!("pack_tileset_vec");
 
